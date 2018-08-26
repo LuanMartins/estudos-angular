@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 /* 
   A tag @Component tem o objetivo de informar para o navegador que essa classe é
-  um componente
+  um componente. É conhecido como Decorator.
 */
 @Component({
   selector: 'app-root',

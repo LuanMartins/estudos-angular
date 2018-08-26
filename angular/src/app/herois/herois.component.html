@@ -1,3 +1,16 @@
-<p>
-  herois works!
-</p>
+
+<!--Interpolação sendo utilizada para mostrar dados do componente-->
+<h2>{{heroi.nome}} Details</h2>
+<div><span>Id: </span>{{heroi.id}}</div>
+<!--O pipe | pode ser utilizado para manipulação de strings-->
+<div><span>Nome: </span>{{heroi.nome | uppercase}}</div>
+
+<!--
+  Criação de um nova div, onde foi colocado um elemento de input para que o usuário
+  possa digitar os dados e, respectivamente passa-los para o objeto do componente
+-->
+<div>
+  <label>
+    <input [(ngModel)]="heroi.nome" placeholder="Digite o nome do heroi">
+  </label>
+ </div>    
