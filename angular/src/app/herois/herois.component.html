@@ -1,16 +1,31 @@
 
+<h2>Herois Listados</h2>
+<ul class="heroes">
+  <!-- 
+    A diretica ngFor esta pegando todos os herois da propriedade "herois" que se encontra
+    no componente e passando para o atributo "item". Em seguida esse dados são mostrados
+    na tag <li> do html referente ao componente.
+  -->
+  <li *ngFor="let item of herois" (click)="onSelect(item)">
+    <span class="badge">{{item.id}}</span> {{item.nome}}
+  </li>
+</ul>
+
+<div *ngIf="heroiSelecionado != null">
+
 <!--Interpolação sendo utilizada para mostrar dados do componente-->
-<h2>{{heroi.nome}} Details</h2>
-<div><span>Id: </span>{{heroi.id}}</div>
-<!--O pipe | pode ser utilizado para manipulação de strings-->
-<div><span>Nome: </span>{{heroi.nome | uppercase}}</div>
+  <h2>{{heroiSelecionado.nome}} Details</h2>
+  <div><span>Id: </span>{{heroiSelecionado.id}}</div>
+  <!--O pipe | pode ser utilizado para manipulação de strings-->
+  <div><span>Nome: </span>{{heroiSelecionado.nome | uppercase}}</div>
 
 <!--
   Criação de um nova div, onde foi colocado um elemento de input para que o usuário
   possa digitar os dados e, respectivamente passa-los para o objeto do componente
 -->
-<div>
-  <label>
-    <input [(ngModel)]="heroi.nome" placeholder="Digite o nome do heroi">
-  </label>
- </div>    
+  <div>
+    <label>
+      <input [(ngModel)]="heroiSelecionado.nome" placeholder="Digite o nome do heroi">
+    </label>
+  </div>
+</div>    
